@@ -1,0 +1,48 @@
+{
+  "name": "project-flashcards",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "cross-fetch": "^3.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "docker:build": "docker image build . -t thinkful-ed/zid-fe-project-flashcards-01-qualified",
+    "docker:run": "docker run --rm -it -p 3000:3000 thinkful-ed/zid-fe-project-flashcards-01-qualified",
+    "docker:stop": "docker stop $(docker ps -q)",
+    "docker:test": "docker run -t  thinkful-ed/zid-fe-project-flashcards-01-qualified npm test",
+    "eject": "react-scripts eject",
+    "start": "concurrently 'npm run start:server' 'npm run start:react'",
+    "start:react": "react-scripts start",
+    "start:server": "json-server ./data/db.json",
+    "start:solution": "npm run -it docker:build && npm run docker:run",
+    "test": "react-scripts test",
+    "test:solution": "npm run docker:build && npm run docker:test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "json-server": "^0.16.1"
+  }
+}
