@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { Decks } from "../Decks";
-import { CreateButton } from "./CreateButton";
-import { Decklist } from "./Decklist";
+import { CreateButton } from "./ButtonCreate";
+import  {Decklist}  from "./DeckList";
 
 export function Homepage({ decks }) {
   return (
