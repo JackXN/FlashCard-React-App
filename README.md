@@ -1,13 +1,13 @@
 # React FlashCard Study App
 
 
-##Project Description
+## Project Description
 
 A simple flashcard app that helps teach the crucial fundamentals of *React* and *React Hooks*.
 
 
 
-##Learning Objectives For This Project
+## Learning Objectives For This Project
 
 This project is designed to test ones ability to work with *rendering* and *state management* using *React*
 
