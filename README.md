@@ -21,6 +21,39 @@ This page will redirect the user to the /new router, and give them the ability t
 
 <hr>
 
+### Created Deck
+
+Once the card has been created, the user will be redirected to the newly created card set where they have the option to start adding new cards to the set
+
+
+![created](./public/screenshots/Created.png)
+
+<hr>
+
+
+###  Adding Cards To The Set
+
+Once the user created a new card they will be redirected to this page where they will be able to add the properties for the new card
+
+
+![Deck](./public/screenshots/AddCard.png)
+
+<hr>
+
+
+
+
+### Created Card 
+
+After succesfully creating a new card the user will be redirected back to the card set dashboard along with the newly created card
+
+
+![createdCard](./public/screenshots/CreatedCard.png)
+
+<hr>
+
+
+
 ### Created 
 
 Once the card has been created, the user will be redirected to the newly created card set
@@ -29,6 +62,9 @@ Once the card has been created, the user will be redirected to the newly created
 ![created](./public/screenshots/Created.png)
 
 <hr>
+
+
+
 
 
 ## Learning Objectives For This Project
