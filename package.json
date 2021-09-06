@@ -14,7 +14,7 @@
     "react-scripts": "^1.1.5"
   },
   "scripts": {
-    "build": "build",
+    "build": "react-scripts build",
     "docker:build": "docker image build . -t thinkful-ed/zid-fe-project-flashcards-01-qualified",
     "docker:run": "docker run --rm -it -p 3000:3000 thinkful-ed/zid-fe-project-flashcards-01-qualified",
     "docker:stop": "docker stop $(docker ps -q)",
