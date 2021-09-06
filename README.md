@@ -1,6 +1,6 @@
 # Flash Cards
 
-> Link to live app: https://tender-easley-433635.netlify.app/
+> Link to live app: https://flashcards-xi.vercel.app/
 
 ### Overview
 
