@@ -1,38 +1,51 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
-import { Decks } from "../Decks";
-import { Homepage } from "../Homepage";
-import { listDecks } from "../utils/api";
 import Header from "./Header";
 import NotFound from "./NotFound";
+import Home from "./Home"
+import StudyCards from "./StudyCards"
+import CreateDeck from "./CreateDeck"
+import DeckView from "./DeckView"
+import AddCard from "./AddCard"
+import EditDeck from "./EditDeck"
+import EditCard from "./EditCard"
+import { BrowserRouter as Router, Route, Switch, useParams, useHistory } from "react-router-dom"
 
 function Layout() {
-  //define useState for the decks array
-  const [decks, setDecks] = useState([]);
-  //create a useEffect that gets a list of decks
-  useEffect(() => {
-    async function loadDecks() {
-      const loadedDecks = await listDecks();
-      setDecks(loadedDecks);
-    }
-    loadDecks();
-  }, []);
+  const [decks, setDecks] = useState([])
+  const [deck, setDeck] = useState([])
+  const [cards, setCards] = useState([]);
+  
 
   return (
     <div>
       <Header />
-      <div className="container">
-        <Switch>
-          <Route exact path="/">
-            <Homepage decks={decks} />
-          </Route>
-          <Route path="/decks">
-            <Decks decks={decks} />
-          </Route>
-          <Route>
-            <NotFound />
-          </Route>
-        </Switch>
+      <div className ="container">
+      <Switch>
+        <Route exact path="/">
+          <Home decks={decks} setDecks={setDecks}/>
+        </Route>
+        <Route exact path="/decks/new">
+          <CreateDeck />
+        </Route>
+        <Route exact path="/decks/:deckId/study">
+          <StudyCards deck={deck} setDeck={setDeck} cards={cards} setCards={setCards}/>
+        </Route>
+        <Route exact path="/decks/:deckId">
+          <DeckView deck={deck} setDeck={setDeck} cards={cards} setCards={setCards}/>
+        </Route>
+        <Route exact path="/decks/:deckId/edit">
+          <EditDeck deck={deck} setDeck={setDeck} />
+        </Route>
+        <Route exact path="/decks/:deckId/cards/new">
+          <AddCard deck={deck} setDeck={setDeck} cards={cards} setCards={setCards}/>
+        </Route>
+        <Route exact path="/decks/:deckId/cards/:cardsId/edit">
+          <EditCard deck={deck} setDeck={setDeck} cards={cards} setCards={setCards}/>
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
       </div>
     </div>
   );
